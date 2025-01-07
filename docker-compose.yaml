@@ -1,0 +1,12 @@
+services:
+  battlebot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: battlebot-container
+    volumes:
+      - ./battlebot:/home/battlebot
+    working_dir: /home/battlebot
+    entrypoint: /bin/bash
+    stdin_open: true # Keep the container open for interaction
+    tty: true        # Allocate a pseudo-TTY
